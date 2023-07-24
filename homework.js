@@ -84,3 +84,32 @@ person.eat(2);
 console.log(person);
 person.exercise(2);
 console.log(person);
+
+class Dinner {
+    constructor(appetizer, entree, dessert) {
+        this.appetizer = appetizer;
+        this.entree = entree;
+        this.dessert = dessert;
+    }
+}
+
+class Chef {
+    constructor() {
+        this.dinners = [];
+    }
+    makeDinner(appetizer, entree, dessert) {
+        const newDinner = new Dinner(appetizer, entree, dessert);
+        this.dinners.push(newDinner);
+    }
+
+    printDinners() {
+        console.log(this.dinners);
+    }
+}
+
+const chef = new Chef();
+console.log(chef);
+chef.makeDinner('orange-glazed meatballs', 'grilled hamburgers', 'apple pie');
+chef.makeDinner('chicken parmesan slider bake', 'sliced Beef brisket', 'tiramisu');
+chef.makeDinner('grilled tomato-peach pizza', 'deep fried BBQ ribs', 'cake');
+chef.printDinners();
